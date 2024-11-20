@@ -25,4 +25,10 @@ const math = require("./math");
  // Asynchronous
  fs.writeFile("./test.txt", "Hello World Async", err()=>{})
 
- NOTE:- in asynchronous call we need to give a callback fn which throws error if it happens.
+ NOTE:- in asynchronous call we need to give a callback fn which takes 'error' and 'result' as argument. In sychronous calls result is returned
+        and then code is executed ahead, but asynchronous calls does not return anything, hence it except a callback through which result or 
+        error will be handled.
+
+** because result is immediately available in synchronous call, so we can use try catch to handle the immediately available data, but in
+   case of asynchronous call since output is not available their is nothing deciding factor on which try catch can be used , hence we  
+   pass a callback fn to handle error and results too.        
